@@ -1,5 +1,6 @@
 dash
-plotly
 pandas
 numpy
+plotly
+statsmodels
 gunicorn
