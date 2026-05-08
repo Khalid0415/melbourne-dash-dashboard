@@ -8,7 +8,7 @@ import os
 warnings.filterwarnings('ignore')
  
 # ── 1. Load Cleaned Data ──────────────────────────────────────────────────────
-df = pd.read_csv('C:\\Users\\User\\Desktop\\DV\\DV_project\\Phase2\\Melbourne_Housing_Cleaned.csv')
+df = pd.read_csv('Melbourne_Housing_Cleaned.csv')
 df['Date']         = pd.to_datetime(df['Date'])
 df['YearMonth']    = df['Date'].dt.to_period('M').astype(str)
 type_map           = {'h': 'House', 't': 'Townhouse', 'u': 'Unit'}
@@ -264,5 +264,7 @@ def update_kpis(selected_type, max_price):
  
 # ── 4. Run ────────────────────────────────────────────────────────────────────
 
+server = app.server
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8050)))
+    app.run(host="0.0.0.0", port=8050)
